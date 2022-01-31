@@ -1,0 +1,374 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/*
+  Header
+*/
+
+.skip-link {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  background-color: #173ebf;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+
+  line-height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 4px dashed orange;
+}
+
+header #drawer {
+  background-color: #22254b;
+  color: white;
+}
+
+header #drawer .nav-content {
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header #drawer .nav-content .nav-menu {
+  display: flex;
+  justify-content: flex-end;
+  width: 40%;
+}
+
+header #drawer .nav-content .nav-menu li {
+  display: inline-block;
+  margin: 0 15px;
+  list-style: none;
+}
+header #drawer .nav-content .nav-menu li a {
+  display: inline-block;
+  line-height: 44px;
+  color: #dedede;
+  text-decoration: none;
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+header #drawer .nav-content .nav-menu li a:hover {
+  color: white;
+}
+
+header #drawer .nav-content .nav-menu li a:focus {
+  outline: 4px dashed orange;
+}
+
+header #drawer #hamburger {
+  text-align: center;
+  line-height: 44px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  opacity: 0;
+  display: none;
+  min-width: 44px;
+  min-height: 44px;
+  background-color: transparent;
+  border: none;
+}
+
+#hamburger:focus {
+  outline: 4px dashed orange;
+}
+/* 
+  Hero
+*/
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 400px;
+  text-align: center;
+  background-image: url("../public/heros/hero-image_2.jpg");
+  background-repeat: no-repeat;
+  /* transition: 1s; */
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+.hero::after {
+  content: "";
+  width: 100%;
+  min-height: 400px;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 1;
+}
+
+.hero .hero__content {
+  margin-top: -100px;
+  font-weight: bolder;
+  position: relative;
+  z-index: 2;
+  text-shadow: 3px 3px 3px black;
+}
+
+.hero .hero__content p {
+  font-weight: lighter;
+  margin-top: 20px;
+}
+
+.hero.skip-hero {
+  min-height: 0% !important;
+  height: 0px !important;
+}
+
+.hero.skip-hero::after {
+  min-height: 0% !important;
+  height: 0px !important;
+}
+
+.hero.hero.skip-hero .hero__content {
+  display: none;
+}
+
+/*
+  Main Content
+*/
+
+main {
+  padding: 32px;
+  flex: 1;
+}
+
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.content .content__heading {
+  font-weight: normal;
+}
+
+/*
+  restaurants
+*/
+
+.restaurants {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+/*
+  restaurant Item
+*/
+
+.restaurant-item {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.restaurant-item__header {
+  position: relative;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__poster {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__rating {
+  position: absolute;
+  padding: 8px;
+  bottom: 20px;
+  left: 0;
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+
+.restaurant-item
+  .restaurant-item__header
+  .restaurant-item__header__rating
+  .restaurant-item__header__rating__score {
+  margin-left: 10px;
+}
+
+.restaurant-item .restaurant-item__content {
+  padding: 16px;
+}
+
+.restaurant-item .restaurant-item__content h3 {
+  margin: 0 0 10px 0;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.restaurant-item .restaurant-item__content h3 a {
+  display: inline-block;
+  color: #db0000;
+  text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+  list-style: 44px;
+}
+.restaurant-item .restaurant-item__content h3 a:focus {
+  outline: 4px dashed orange;
+}
+
+.restaurant-item .restaurant-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+/*
+  restaurant
+*/
+
+.restaurant {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+}
+
+.restaurant .restaurant__poster {
+  width: 100%;
+  max-width: 400px;
+}
+
+.restaurant .restaurant__info h4 {
+  margin: 8px 0;
+}
+
+.restaurant .restaurant__review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.restaurant .restaurant__review .review {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px;
+  display: grid;
+  padding: 5px;
+  grid-template-columns: 1fr;
+  box-shadow: 0px 0px 2px black;
+  font-size: 12px;
+  background-color: #393d72;
+  color: white;
+  border-radius: 5px;
+}
+
+.restaurant .add__review {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  margin: 15px auto;
+  padding: 20px;
+  box-shadow: 0 0 5px black;
+  background-color: #22254b;
+  color: white;
+  border-radius: 5px;
+}
+
+.restaurant .add__review .form-group > label {
+  display: block;
+  font-size: 12px;
+}
+
+.restaurant .add__review .form-group input {
+  min-height: 44px;
+  min-width: 44px;
+}
+.restaurant .add__review .form-group textarea {
+  width: 100%;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.restaurant .add__review .submit-review .btn-submit {
+  width: 100%;
+  background-color: #1c2499;
+  border-color: #1c2499;
+  padding: 5px;
+  color: white;
+  min-height: 44px;
+  min-width: 44px;
+}
+/* 
+  Like
+*/
+
+.like {
+  font-size: 18px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #db0000;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  Footer
+*/
+
+footer {
+  background-color: #22254b;
+  padding: 16px;
+}
+
+footer p {
+  text-align: center;
+  color: #ffffff;
+}
+
+footer p a {
+  display: inline-block;
+  color: #db0000;
+  text-decoration: none;
+  min-height: 44px !important;
+  min-width: 44px !important;
+  line-height: 44px;
+}
+
+footer p a:focus {
+  outline: 4px dashed orange;
+}
